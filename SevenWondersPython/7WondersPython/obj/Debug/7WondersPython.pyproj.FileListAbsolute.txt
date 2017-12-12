@@ -1,0 +1,3 @@
+C:\4\SevenWondersPython\7WondersPython\obj\Debug\7WondersPython.pyproj.CoreCompileInputs.cache
+C:\4\SevenWondersPython\7WondersPython\bin\Microsoft.PythonTools.WebRole.dll
+C:\4\SevenWondersPython\7WondersPython\bin\wfastcgi.py

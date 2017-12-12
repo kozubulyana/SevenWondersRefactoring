@@ -1,0 +1,8 @@
+_SUPPORTED_TCP_OPTIONS
+LOGGER
+logging
+SOL_TCP
+socket_requires_keepalive
+socket
+set_sock_opts
+pika

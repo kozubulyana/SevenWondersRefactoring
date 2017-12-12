@@ -1,0 +1,56 @@
+﻿@{
+	ViewBag.Title = "7 wonders";
+}
+
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryui")
+@Scripts.Render("~/bundles/bootstrap")
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>@ViewBag.Title</title>
+</head>
+<body id="page-top">
+	<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+		<div id="mainNav1" class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+				</button>
+				<a class="navbar-brand page-scroll" href="#/home">7 wonders</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div headerViewModel>
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><a href="#/home">Home</a></li>
+                        <li><a href="#/contact">Contact</a></li>
+                        <li data-bind="if: ifAdminOrManager"><a href="#/countries">Countries</a></li>
+                        <li data-bind="if: isManager"><a href="#/cities">Cities</a></li>
+                        <li data-bind="if: isManager"><a href="#/airports">Airports</a></li>
+                        <li data-bind="if: isManager"><a href="#/flights">Flights</a></li>
+                        <li data-bind="if: isManager"><a href="#/tours">Tours</a></li>
+
+                        <li data-bind="if: isAdmin"><a href="#/customers">Customers</a></li>
+                        <li data-bind="if: isAdmin"><a href="#/managers">Managers</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li data-bind="if: isUnAuthorized"><a href="#/register">Register</a></li>
+                        <li data-bind="if: isUnAuthorized"><a href="#/login">Log in</a></li>
+                        <li data-bind="if: isCustomer"><a href="#/cabinet">Cabinet</a></li>
+                        <li data-bind="if: isAuthorized, click: logOut"><a a href="#/">Log off</a></li>
+                    </ul>
+                </div>
+			</div>
+		</div>
+	</nav>
+	<div id="mainDiv">
+	</div>
+</body>
+</html>
+
+<script type="text/javascript" src="../../static/Scripts/knockout-3.1.0.js"></script>
+<script type="text/javascript" src="../../static/Scripts/knockout.validation.min.js"></script>
+<script type="text/javascript" src="../../static/Scripts/sammy-0.7.5.js"></script>
+<script type="text/javascript" src="../../static/Scripts/Home/Index.js"></script>

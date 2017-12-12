@@ -1,0 +1,215 @@
+﻿<link type="text/css" rel="stylesheet" href="../../static/Content/Flights/Index.css" />
+
+<div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 col-sm-offset-1 col-md-offset-1 col-lg-offset-1" id="flightViewModel">
+	<h3 class="text-center">Flights</h3>
+	<br />
+	<!-- Schedule flight modal-->
+	<div class="modal fade" id="scheduleModal" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title text-center">Schedule</h4>
+				</div>
+				<div class="modal-body">
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>Day</th>
+								<th>Departure time</th>
+								<th>Arrival time</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody data-bind="foreach: Schedule">
+							<tr>							
+								<td><select class="form-control" data-bind="options: $parent.DropdownDays, optionsText: 'Text', optionsValue: 'Id', value: DayOfWeek, disable: isOld()"></select></td>
+								<td><input class="form-control" type="time" data-bind="value: DepartureTime" /></td>
+								<td><input class="form-control" type="time" data-bind="value: ArrivalTime" /></td>
+								<td><a href="#" class="deleteSchedule" data-bind="click: $parent.removeSchedule">x</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-warning middle-button" type="button" id="addItem" data-bind="click: addScheduleItem">Add new item</button>
+					<button type="button" class="btn btn-warning middle-button" data-bind="click: saveSchedule">Save</button>
+					<button type="button" class="btn middle-button" data-dismiss="modal">Cancel</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row" style="margin-bottom:6px;" id="flightModifyViewModel">
+        <!-- Add-Edit flight modal-->
+        <div class="modal fade" id="editFlightModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title text-center">Flight</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div align="center">
+                            <hidden data-bind="value: Id"></hidden>
+                            <div class="form-group">
+                                <label for="number">Number</label>
+                                <input id="number" type="text" maxlength="4" class="form-control" data-bind="value: Number" placeholder="Enter number">
+                            </div>
+                            <div class="form-group">
+                                <label for="price">Ticket price ($)</label>
+                                <input type="number" step="0.01" min="0.01" max="1000" class="form-control" data-bind="value: Price" placeholder="Enter ticket price">
+                            </div>
+                            <div class="form-group">
+                                <label for="departureAirport">Departure airport</label>
+                                <select class="form-control" data-bind="options: DepartureAirports, optionsText: 'Text', optionsValue: 'Id', value: selectedChoiceDeparture, optionsCaption: 'Choose departure airport'"></select>
+                            </div>
+                            <div class="form-group">
+                                <label for="arrivalAirport">Arrival airport</label>
+                                <select class="form-control" data-bind="options: ArrivalAirports, optionsText: 'Text', optionsValue: 'Id', value: selectedChoiceArrival, optionsCaption: 'Choose arrival airport'"></select>
+                            </div>
+                            <div class="form-group">
+                                <label for="airplaneModel">Airplane model</label>
+                                <input type="text" maxlength="15" class="form-control" data-bind="value: AirplaneModel" placeholder="Enter airplane model">
+                            </div>
+                            <div class="form-group">
+                                <label for="airplaneCompany">Airplane company</label>
+                                <input type="text" maxlength="15" class="form-control" data-bind="value: AirplaneCompany" placeholder="Enter airplane company">
+                            </div>
+                            <div class="form-group">
+                                <label for="seatsAmount">Seats amount</label>
+                                <input type="number" min="1" max="1000" class="form-control" data-bind="value: SeatsAmount" placeholder="Enter seats amount">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-warning middle-button" data-bind="click: saveChanges">Save</button>
+                        <button type="button" class="btn middle-button" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+			<button class="btn btn-warning middle-button" type="button" data-bind="click: addFlight">Add flight</button>
+		</div>
+	</div>
+	<div id="flightsTable">
+        <!-- Delete flight modal -->
+        <div class="modal fade" id="deleteFlightModal" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title text-center">Flight</h4>
+                    </div>
+                    <div class="modal-body">
+                        <h5 class="text-center">Are you sure you want to delete this flight?</h5>
+                    </div>
+                    <div class="modal-footer">
+                        <hidden data-bind="value: idOfDeletedFlight"></hidden>
+                        <button type="button" class="btn btn-warning middle-button" data-bind="click: deleteFlight">Delete</button>
+                        <button type="button" class="btn middle-button" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+		<div class="row">
+			<table class="table">
+				<tbody data-bind="foreach: flights">
+					<tr>
+						<td>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<div class="row">
+										<div class="panelHeadingItem headCustomerName col-md-4">
+											<h3 class="panel-title">
+												<b data-bind="text: Number"></b>
+											</h3>
+										</div>
+										<div class="panelHeadingItem pull-right" style="padding-right:15px;">
+											<button class="btn btn-xs" type="button" style="padding:5px" data-bind="click: $parent.showModalEditFlight">
+												<div class="glyphicon glyphicon-pencil"></div>
+											</button>
+											<button class="btn btn-xs" type="button" style="padding:5px" data-bind="click: $parent.showModalSchedule">
+												<div class="glyphicon glyphicon-list-alt"></div>
+											</button>
+											<button class="btn btn-xs" type="button" style="padding:5px" data-bind="click: $parent.showModalDeleteFlight">
+												<div class="glyphicon glyphicon-remove" ></div>
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="panel-body">
+                                    <hidden data-bind="value: DepartureAirportId"></hidden>
+                                    <hidden data-bind="value: ArrivalAirportId"></hidden>
+                                    <div class="col-md-4 col-md-offset-2">
+                                        <div class="row">
+                                            <b>Departure:</b>
+                                            <span data-bind="text: DepartureAirportCode"></span>
+                                            <span data-bind="text: DepartureAirportName"></span>
+                                            (<span data-bind="text: DepartureAirportCityName"></span>,
+                                            <span data-bind="text: DepartureAirportCountryName"></span>)
+                                        </div>
+                                        <div class="row">
+                                            <b>Arrival:</b>
+                                            <span data-bind="text: ArrivalAirportCode"></span>
+                                            <span data-bind="text: ArrivalAirportName"></span>
+                                            (<span data-bind="text: ArrivalAirportCityName"></span>,
+                                            <span data-bind="text: ArrivalAirportCountryName"></span>)
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-md-offset-2">
+                                        <div class="row">
+                                            <b>Aireplane:</b>
+                                            <span data-bind="text: AirplaneModel"></span>,
+                                            <span data-bind="text: AirplaneCompany"></span>
+                                        </div>
+                                        <div class="row">
+                                            <b>Sets amount:</b>
+                                            <span data-bind="text: AirplaneSeatsAmount"></span>
+                                        </div>
+                                        <div class="row">
+                                            <b>Ticket price:</b>
+                                            $<span data-bind="text: Price"></span>
+                                        </div>
+                                    </div>
+							    </div>
+                            </div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="row" data-bind="visible: pageCount()>1">
+			<div class="col-sm-5">
+				<div class="dataTables_info" id="managersTable_info" role="status" aria-live="polite">
+					Showing <span data-bind="text: indexOfFirst"></span> to <span data-bind="text: indexOfLast"></span> of <span data-bind="text: dataCount"></span> entries
+				</div>
+			</div>
+			<div class="col-sm-7">
+				<ul class="pagination">
+					<li class="page-item">
+						<a class="page-link" data-bind="click: previousPage, css: {'disabled': pageIndex()<=0}">Previous</a>
+					</li>
+				</ul>
+				<ul class="pagination" data-bind="foreach: allPages">
+					<li class="page-item" data-bind="css: { active: $data.pageNumber == ($parent.pageIndex()+1) }">
+						<a href="#" class="page-link" data-bind="text: $data.pageNumber, click: function() { $parent.moveToPage($data.pageNumber-1); }"></a>
+					</li>
+				</ul>
+				<ul class="pagination">
+					<li class="page-item">
+						<a class="page-link" data-bind="click: nextPage, css: {'disabled': pageIndex() >= pageCount()-1}">Next</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="../../static/Scripts/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../static/Scripts/bootstrap.js"></script>
+<script type="text/javascript" src="../../static/Scripts/knockout-3.1.0.js"></script>
+<script type="text/javascript" src="../../static/Scripts/knockout.validation.min.js"></script>
+<script type="text/javascript" src="../../static/Scripts/Flights/Index.js"></script>

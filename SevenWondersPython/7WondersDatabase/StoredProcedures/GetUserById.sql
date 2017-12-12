@@ -1,0 +1,5 @@
+﻿CREATE PROCEDURE [dbo].[GetUserById]
+	@id BIGINT
+AS
+	SELECT * FROM Users WHERE id = @id
+RETURN 0

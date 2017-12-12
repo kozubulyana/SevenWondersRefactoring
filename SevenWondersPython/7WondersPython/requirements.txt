@@ -1,0 +1,4 @@
+Flask<1
+flask-jwt-extended
+pyjwt
+pypyodbc

@@ -1,0 +1,600 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>ca344e93-7275-4c41-acc5-d88cf1dab4e3</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{789894c7-04a9-4a11-a6b5-3f4435165112};{1b580a1a-fdb3-4b32-83e1-6407eb2722e6};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>runserver.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <LaunchProvider>Web launcher</LaunchProvider>
+    <OutputPath>.</OutputPath>
+    <StaticUriPattern>^/static/.*</StaticUriPattern>
+    <StaticUriRewrite>^/$(MSBuildProjectName)/static/.*</StaticUriRewrite>
+    <PythonWsgiHandler>$(MSBuildProjectName).app</PythonWsgiHandler>
+    <Name>7WondersPython</Name>
+    <RootNamespace>7WondersPython</RootNamespace>
+    <InterpreterId>MSBuild|env1|$(MSBuildProjectFullPath)</InterpreterId>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="BLL\AccountService.py" />
+    <Compile Include="BLL\AirportsService.py" />
+    <Compile Include="BLL\CitiesService.py" />
+    <Compile Include="BLL\CountriesService.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BLL\CustomerCabinetService.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BLL\CustomersService.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BLL\FlightsService.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BLL\HotelsService.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BLL\ManagersService.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BLL\SearchService.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BLL\ToursService.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BLL\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\AccountController.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\AirportsController.py" />
+    <Compile Include="Controllers\CitiesController.py" />
+    <Compile Include="Controllers\CountriesController.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\CustomerCabinetController.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\CustomersController.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\FlightsController.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\HotelsController.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\ManagersController.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\SearchController.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\ToursManagementController.py" />
+    <Compile Include="Controllers\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAL\SevenWondersContext.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAL\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Helpers\json_helper.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Helpers\RPCClient.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Helpers\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="runserver.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DAL\" />
+    <Folder Include="BLL\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="static\Content\" />
+    <Folder Include="static\Content\Airports\" />
+    <Folder Include="static\Content\Cities\" />
+    <Folder Include="static\Content\Contact\" />
+    <Folder Include="static\Content\Countries\" />
+    <Folder Include="static\Content\CustomerCabinet\" />
+    <Folder Include="static\Content\CustomersManagement\" />
+    <Folder Include="static\Content\Flights\" />
+    <Folder Include="static\Content\Images\" />
+    <Folder Include="static\Content\img\" />
+    <Folder Include="static\Content\img\Hotels\" />
+    <Folder Include="static\Content\img\Hotels\Hotel10\" />
+    <Folder Include="static\Content\img\Hotels\Hotel11\" />
+    <Folder Include="static\Content\img\Hotels\Hotel13\" />
+    <Folder Include="static\Content\img\Hotels\Hotel15\" />
+    <Folder Include="static\Content\img\Hotels\Hotel17\" />
+    <Folder Include="static\Content\img\Hotels\Hotel18\" />
+    <Folder Include="static\Content\img\Hotels\Hotel19\" />
+    <Folder Include="static\Content\img\Hotels\Hotel20\" />
+    <Folder Include="static\Content\img\Hotels\Hotel21\" />
+    <Folder Include="static\Content\img\Hotels\Hotel22\" />
+    <Folder Include="static\Content\img\Hotels\Hotel2\" />
+    <Folder Include="static\Content\img\Hotels\Hotel3\" />
+    <Folder Include="static\Content\img\Hotels\Hotel41\" />
+    <Folder Include="static\Content\img\Hotels\Hotel4\" />
+    <Folder Include="static\Content\img\Hotels\Hotel5\" />
+    <Folder Include="static\Content\img\Hotels\Hotel6\" />
+    <Folder Include="static\Content\img\Hotels\Hotel7\" />
+    <Folder Include="static\Content\img\Hotels\Hotel8\" />
+    <Folder Include="static\Content\img\Hotels\Hotel9\" />
+    <Folder Include="static\Content\img\Hotels\Hotel_10\" />
+    <Folder Include="static\Content\img\Hotels\Hotel_11\" />
+    <Folder Include="static\Content\img\Hotels\Hotel_2\" />
+    <Folder Include="static\Content\img\Hotels\Hotel_3\" />
+    <Folder Include="static\Content\img\Hotels\Hotel_4\" />
+    <Folder Include="static\Content\img\Hotels\Hotel_5\" />
+    <Folder Include="static\Content\img\Hotels\Hotel_6\" />
+    <Folder Include="static\Content\img\Hotels\Hotel_7\" />
+    <Folder Include="static\Content\img\Hotels\Hotel_8\" />
+    <Folder Include="static\Content\img\Hotels\Hotel_9\" />
+    <Folder Include="static\Content\img\Rooms\" />
+    <Folder Include="static\Content\img\Rooms\Room17\" />
+    <Folder Include="static\Content\img\Rooms\Room18\" />
+    <Folder Include="static\Content\img\Rooms\Room26\" />
+    <Folder Include="static\Content\img\Rooms\Room27\" />
+    <Folder Include="static\Content\img\Rooms\Room28\" />
+    <Folder Include="static\Content\img\Rooms\Room31\" />
+    <Folder Include="static\Content\img\Rooms\Room32\" />
+    <Folder Include="static\Content\img\Rooms\Room37\" />
+    <Folder Include="static\Content\img\Rooms\Room38\" />
+    <Folder Include="static\Content\img\Rooms\Room39\" />
+    <Folder Include="static\Content\img\Rooms\Room58\" />
+    <Folder Include="static\Content\img\Rooms\Room60\" />
+    <Folder Include="static\Content\img\Rooms\Room61\" />
+    <Folder Include="static\Content\img\Rooms\Room62\" />
+    <Folder Include="static\Content\img\Rooms\Room68\" />
+    <Folder Include="static\Content\img\Rooms\Room73\" />
+    <Folder Include="static\Content\img\Rooms\Room74\" />
+    <Folder Include="static\Content\ManagersManagement\" />
+    <Folder Include="static\Content\Hotels\" />
+    <Folder Include="static\Content\ToursManagement\" />
+    <Folder Include="static\Content\Search\" />
+    <Folder Include="static\Content\themes\" />
+    <Folder Include="static\Content\themes\base\" />
+    <Folder Include="static\Content\themes\base\images\" />
+    <Folder Include="static\Content\vendor\" />
+    <Folder Include="static\Content\vendor\bootstrap\" />
+    <Folder Include="static\Content\vendor\bootstrap\css\" />
+    <Folder Include="static\Content\vendor\bootstrap\fonts\" />
+    <Folder Include="static\Content\vendor\bootstrap\js\" />
+    <Folder Include="static\Content\vendor\font-awesome\" />
+    <Folder Include="static\Content\vendor\font-awesome\css\" />
+    <Folder Include="static\Content\vendor\font-awesome\fonts\" />
+    <Folder Include="static\Content\vendor\font-awesome\less\" />
+    <Folder Include="static\Content\vendor\font-awesome\scss\" />
+    <Folder Include="static\Content\vendor\jquery\" />
+    <Folder Include="static\Content\vendor\magnific-popup\" />
+    <Folder Include="static\Content\vendor\scrollreveal\" />
+    <Folder Include="static\fonts\" />
+    <Folder Include="static\Scripts\" />
+    <Folder Include="static\Scripts\Airports\" />
+    <Folder Include="static\Scripts\Cities\" />
+    <Folder Include="static\Scripts\cldr\" />
+    <Folder Include="static\Scripts\Countries\" />
+    <Folder Include="static\Scripts\CustomerCabinet\" />
+    <Folder Include="static\Scripts\CustomersManagement\" />
+    <Folder Include="static\Scripts\Flights\" />
+    <Folder Include="static\Scripts\Home\" />
+    <Folder Include="static\Scripts\KnockoutHelpers\" />
+    <Folder Include="static\Scripts\Login\" />
+    <Folder Include="static\Scripts\ManagersManagement\" />
+    <Folder Include="static\Scripts\Hotels\" />
+    <Folder Include="static\Scripts\Account\" />
+    <Folder Include="static\Scripts\Register\" />
+    <Folder Include="static\Scripts\Search\" />
+    <Folder Include="static\Scripts\ToursManagement\" />
+    <Folder Include="templates\Views\CustomerCabinet\" />
+    <Folder Include="templates\Views\Airports\" />
+    <Folder Include="templates\Views\Cities\" />
+    <Folder Include="templates\Views\ManagersManagement\" />
+    <Folder Include="templates\Views\Home\" />
+    <Folder Include="templates\Views\CustomersManagement\" />
+    <Folder Include="templates\Views\Countries\" />
+    <Folder Include="templates\Views\Hotels\" />
+    <Folder Include="templates\Views\Flights\" />
+    <Folder Include="templates\Views\" />
+    <Folder Include="templates\Views\Account\" />
+    <Folder Include="templates\Views\ToursManagement\" />
+    <Folder Include="templates\Views\Search\" />
+    <Folder Include="_7WondersPython\" />
+    <Folder Include="static\" />
+    <Folder Include="templates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="requirements.txt" />
+    <Content Include="static\Content\Airports\Index.css" />
+    <Content Include="static\Content\bootstrap-theme.css" />
+    <Content Include="static\Content\bootstrap-theme.css.map" />
+    <Content Include="static\Content\bootstrap-theme.min.css" />
+    <Content Include="static\Content\bootstrap-theme.min.css.map" />
+    <Content Include="static\Content\bootstrap.css" />
+    <Content Include="static\Content\bootstrap.css.map" />
+    <Content Include="static\Content\bootstrap.min.css" />
+    <Content Include="static\Content\bootstrap.min.css.map" />
+    <Content Include="static\Content\Cities\Index.css" />
+    <Content Include="static\Content\Contact\Index.css" />
+    <Content Include="static\Content\Countries\Index.css" />
+    <Content Include="static\Content\creative.css" />
+    <Content Include="static\Content\creative.min.css" />
+    <Content Include="static\Content\CustomerCabinet\Index.css" />
+    <Content Include="static\Content\CustomersManagement\Index.css" />
+    <Content Include="static\Content\Flights\FlightShortInfo.css" />
+    <Content Include="static\Content\Flights\Index.css" />
+    <Content Include="static\Content\Hotels\HotelShortInfo.css" />
+    <Content Include="static\Content\Hotels\RoomShortInfo.css" />
+    <Content Include="static\Content\Images\loader.gif" />
+    <Content Include="static\Content\img\1.jpg" />
+    <Content Include="static\Content\img\17661561.jpg" />
+    <Content Include="static\Content\img\17742267.jpg" />
+    <Content Include="static\Content\img\17898992.jpg" />
+    <Content Include="static\Content\img\2.jpg" />
+    <Content Include="static\Content\img\22986028.jpg" />
+    <Content Include="static\Content\img\32965782.jpg" />
+    <Content Include="static\Content\img\33331970.jpg" />
+    <Content Include="static\Content\img\33336275.jpg" />
+    <Content Include="static\Content\img\33407453.jpg" />
+    <Content Include="static\Content\img\33473915.jpg" />
+    <Content Include="static\Content\img\33553223.jpg" />
+    <Content Include="static\Content\img\33760867.jpg" />
+    <Content Include="static\Content\img\363834.jpg" />
+    <Content Include="static\Content\img\374010.jpg" />
+    <Content Include="static\Content\img\38529985.jpg" />
+    <Content Include="static\Content\img\39917565.jpg" />
+    <Content Include="static\Content\img\51271742.jpg" />
+    <Content Include="static\Content\img\674925.png" />
+    <Content Include="static\Content\img\Avatar.jpg" />
+    <Content Include="static\Content\img\default.png" />
+    <Content Include="static\Content\img\header.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel10\1.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel10\2.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel10\3.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel10\4.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel10\5.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel10\6.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel10\7.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel11\1.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel11\2.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel11\3.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel11\4.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel11\5.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel11\6.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel11\7.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel11\8.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel11\9.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel13\10.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel13\2.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel13\3.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel13\4.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel13\5.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel13\6.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel13\7.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel13\8.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel13\9.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel15\1.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel15\10.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel15\2.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel15\3.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel15\4.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel15\5.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel15\6.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel15\7.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel15\8.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel15\9.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel2\2.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel2\33043.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel2\33108.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel3\14.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel3\22986028.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel41\11594109_12_y.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel4\14.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel4\hotel3.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel5\11594109_12_y.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel5\14.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel5\hotel3.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel6\hotel1.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel6\hotel2.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel6\hotel3.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel7\hotel1.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel7\hotel2.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel7\hotel3.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel8\hotel1.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel8\hotel2.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel8\hotel3.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel9\hotel1.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel9\hotel2.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel9\hotel3.jpg" />
+    <Content Include="static\Content\img\palma.png" />
+    <Content Include="static\Content\img\Rooms\Room17\47251022.jpg" />
+    <Content Include="static\Content\img\Rooms\Room18\78679797.jpg" />
+    <Content Include="static\Content\img\Rooms\Room26\46487274.jpg" />
+    <Content Include="static\Content\img\Rooms\Room27\46487277.jpg" />
+    <Content Include="static\Content\img\Rooms\Room28\56068710.jpg" />
+    <Content Include="static\Content\img\Rooms\Room31\1.jpg" />
+    <Content Include="static\Content\img\Rooms\Room31\2.jpg" />
+    <Content Include="static\Content\img\Rooms\Room31\3.jpg" />
+    <Content Include="static\Content\img\Rooms\Room31\4.jpg" />
+    <Content Include="static\Content\img\Rooms\Room32\1.jpg" />
+    <Content Include="static\Content\img\Rooms\Room32\2.jpg" />
+    <Content Include="static\Content\img\Rooms\Room32\3.jpg" />
+    <Content Include="static\Content\img\Rooms\Room32\4.jpg" />
+    <Content Include="static\Content\img\Rooms\Room37\1.jpg" />
+    <Content Include="static\Content\img\Rooms\Room37\2.jpg" />
+    <Content Include="static\Content\img\Rooms\Room37\3.jpg" />
+    <Content Include="static\Content\img\Rooms\Room37\4.jpg" />
+    <Content Include="static\Content\img\Rooms\Room38\1.jpg" />
+    <Content Include="static\Content\img\Rooms\Room38\2.jpg" />
+    <Content Include="static\Content\img\Rooms\Room38\3.jpg" />
+    <Content Include="static\Content\img\Rooms\Room38\4.jpg" />
+    <Content Include="static\Content\img\Rooms\Room39\1.jpg" />
+    <Content Include="static\Content\img\Rooms\Room39\2.jpg" />
+    <Content Include="static\Content\img\Rooms\Room39\3.jpg" />
+    <Content Include="static\Content\img\Rooms\Room39\4.jpg" />
+    <Content Include="static\Content\img\Rooms\Room58\2.jpg" />
+    <Content Include="static\Content\img\Rooms\Room60\46385677.jpg" />
+    <Content Include="static\Content\img\Rooms\Room61\25955758.jpg" />
+    <Content Include="static\Content\img\Rooms\Room62\46385682.jpg" />
+    <Content Include="static\Content\img\Rooms\Room68\46385685.jpg" />
+    <Content Include="static\Content\img\tour1.jpg" />
+    <Content Include="static\Content\img\tour2.jpg" />
+    <Content Include="static\Content\img\tour3.jpg" />
+    <Content Include="static\Content\img\tour4.jpeg" />
+    <Content Include="static\Content\ManagersManagement\Index.css" />
+    <Content Include="static\Content\PagedList.css" />
+    <Content Include="static\Content\Search\Booking.css" />
+    <Content Include="static\Content\Search\Index.css" />
+    <Content Include="static\Content\select2.css" />
+    <Content Include="static\Content\select2.min.css" />
+    <Content Include="static\Content\Site.css" />
+    <Content Include="static\Content\star-off.svg" />
+    <Content Include="static\Content\star-on.svg" />
+    <Content Include="static\Content\stars.css" />
+    <Content Include="static\Content\Table.css" />
+    <Content Include="static\Content\themes\base\accordion.css" />
+    <Content Include="static\Content\themes\base\all.css" />
+    <Content Include="static\Content\themes\base\autocomplete.css" />
+    <Content Include="static\Content\themes\base\base.css" />
+    <Content Include="static\Content\themes\base\button.css" />
+    <Content Include="static\Content\themes\base\core.css" />
+    <Content Include="static\Content\themes\base\datepicker.css" />
+    <Content Include="static\Content\themes\base\dialog.css" />
+    <Content Include="static\Content\themes\base\draggable.css" />
+    <Content Include="static\Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="static\Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="static\Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="static\Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="static\Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="static\Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="static\Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="static\Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="static\Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="static\Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="static\Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="static\Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="static\Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="static\Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="static\Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="static\Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="static\Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="static\Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="static\Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="static\Content\themes\base\jquery-ui.css" />
+    <Content Include="static\Content\themes\base\jquery-ui.min.css" />
+    <Content Include="static\Content\themes\base\menu.css" />
+    <Content Include="static\Content\themes\base\progressbar.css" />
+    <Content Include="static\Content\themes\base\resizable.css" />
+    <Content Include="static\Content\themes\base\selectable.css" />
+    <Content Include="static\Content\themes\base\selectmenu.css" />
+    <Content Include="static\Content\themes\base\slider.css" />
+    <Content Include="static\Content\themes\base\sortable.css" />
+    <Content Include="static\Content\themes\base\spinner.css" />
+    <Content Include="static\Content\themes\base\tabs.css" />
+    <Content Include="static\Content\themes\base\theme.css" />
+    <Content Include="static\Content\themes\base\tooltip.css" />
+    <Content Include="static\Content\ToursManagement\Index.css" />
+    <Content Include="static\Content\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="static\Content\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="static\Content\vendor\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="static\Content\vendor\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="static\Content\vendor\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="static\Content\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="static\Content\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="static\Content\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="static\Content\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="static\Content\vendor\font-awesome\css\font-awesome.css" />
+    <Content Include="static\Content\vendor\font-awesome\css\font-awesome.min.css" />
+    <Content Include="static\Content\vendor\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="static\Content\vendor\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="static\Content\vendor\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="static\Content\vendor\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="static\Content\vendor\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="static\Content\vendor\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="static\Content\vendor\font-awesome\less\animated.less" />
+    <Content Include="static\Content\vendor\font-awesome\less\bordered-pulled.less" />
+    <Content Include="static\Content\vendor\font-awesome\less\core.less" />
+    <Content Include="static\Content\vendor\font-awesome\less\fixed-width.less" />
+    <Content Include="static\Content\vendor\font-awesome\less\font-awesome.less" />
+    <Content Include="static\Content\vendor\font-awesome\less\icons.less" />
+    <Content Include="static\Content\vendor\font-awesome\less\larger.less" />
+    <Content Include="static\Content\vendor\font-awesome\less\list.less" />
+    <Content Include="static\Content\vendor\font-awesome\less\mixins.less" />
+    <Content Include="static\Content\vendor\font-awesome\less\path.less" />
+    <Content Include="static\Content\vendor\font-awesome\less\rotated-flipped.less" />
+    <Content Include="static\Content\vendor\font-awesome\less\screen-reader.less" />
+    <Content Include="static\Content\vendor\font-awesome\less\stacked.less" />
+    <Content Include="static\Content\vendor\font-awesome\less\variables.less" />
+    <Content Include="static\Content\vendor\font-awesome\scss\font-awesome.scss" />
+    <Content Include="static\Content\vendor\font-awesome\scss\_animated.scss" />
+    <Content Include="static\Content\vendor\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="static\Content\vendor\font-awesome\scss\_core.scss" />
+    <Content Include="static\Content\vendor\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="static\Content\vendor\font-awesome\scss\_icons.scss" />
+    <Content Include="static\Content\vendor\font-awesome\scss\_larger.scss" />
+    <Content Include="static\Content\vendor\font-awesome\scss\_list.scss" />
+    <Content Include="static\Content\vendor\font-awesome\scss\_mixins.scss" />
+    <Content Include="static\Content\vendor\font-awesome\scss\_path.scss" />
+    <Content Include="static\Content\vendor\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="static\Content\vendor\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="static\Content\vendor\font-awesome\scss\_stacked.scss" />
+    <Content Include="static\Content\vendor\font-awesome\scss\_variables.scss" />
+    <Content Include="static\Content\vendor\jquery\jquery.js" />
+    <Content Include="static\Content\vendor\jquery\jquery.min.js" />
+    <Content Include="static\Content\vendor\magnific-popup\jquery.magnific-popup.js" />
+    <Content Include="static\Content\vendor\magnific-popup\jquery.magnific-popup.min.js" />
+    <Content Include="static\Content\vendor\magnific-popup\magnific-popup.css" />
+    <Content Include="static\Content\vendor\scrollreveal\scrollreveal.js" />
+    <Content Include="static\Content\vendor\scrollreveal\scrollreveal.min.js" />
+    <Content Include="static\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="static\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="static\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="static\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="static\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="static\Scripts\Account\Login.js" />
+    <Content Include="static\Scripts\Account\Register.js" />
+    <Content Include="static\Scripts\Airports\Index.js" />
+    <Content Include="static\Scripts\bootstrap.js" />
+    <Content Include="static\Scripts\bootstrap.min.js" />
+    <Content Include="static\Scripts\Cities\Index.js" />
+    <Content Include="static\Scripts\Countries\Index.js" />
+    <Content Include="static\Scripts\CustomerCabinet\Index.js" />
+    <Content Include="static\Scripts\CustomersManagement\Index.js" />
+    <Content Include="static\Scripts\Flights\FlightShortInfo.js" />
+    <Content Include="static\Scripts\Flights\Index.js" />
+    <Content Include="static\Scripts\Home\Index.js" />
+    <Content Include="static\Scripts\Hotels\HotelShortInfo.js" />
+    <Content Include="static\Scripts\Hotels\RoomShortInfo.js" />
+    <Content Include="static\Scripts\Search\Booking.js" />
+    <Content Include="templates\Views\Account\Login.html" />
+    <Content Include="templates\Views\Account\Register.html" />
+    <Content Include="templates\Views\Airports\Index.html" />
+    <Content Include="templates\Views\Cities\Index.html" />
+    <Content Include="templates\Views\Countries\Index.html" />
+    <Content Include="templates\Views\CustomerCabinet\Index.html">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="templates\Views\CustomersManagement\Index.html" />
+    <Content Include="templates\Views\Flights\FlightShortInfo.html" />
+    <Content Include="templates\Views\Flights\Index.html" />
+    <Content Include="templates\Views\Home\Contact.html" />
+    <Content Include="templates\Views\Home\Index.html" />
+    <Content Include="templates\Views\Hotels\HotelShortInfo.html" />
+    <Content Include="templates\Views\Hotels\RoomShortInfo.html" />
+    <Content Include="templates\Views\ManagersManagement\Index.html" />
+    <Content Include="templates\Views\Search\Booking.html" />
+    <Content Include="templates\Views\Search\Index.html" />
+    <Content Include="templates\Views\ToursManagement\Index.html" />
+    <None Include="static\Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="static\Scripts\jquery-1.10.2.js" />
+    <Content Include="static\Scripts\jquery-1.10.2.min.js" />
+    <Content Include="static\Scripts\jquery-1.10.2.min.map" />
+    <None Include="static\Scripts\jquery-1.12.4.intellisense.js" />
+    <Content Include="static\Scripts\jquery-1.12.4.js" />
+    <Content Include="static\Scripts\jquery-1.12.4.min.js" />
+    <Content Include="static\Scripts\jquery-1.12.4.min.map" />
+    <Content Include="static\Scripts\jquery-ui-1.12.0.js" />
+    <Content Include="static\Scripts\jquery-ui-1.12.0.min.js" />
+    <Content Include="static\Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="static\Scripts\jquery.unobtrusive-ajax.min.js" />
+    <None Include="static\Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="static\Scripts\jquery.validate.js" />
+    <Content Include="static\Scripts\jquery.validate.min.js" />
+    <Content Include="static\Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="static\Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="static\Scripts\knockout-3.1.0.debug.js" />
+    <Content Include="static\Scripts\knockout-3.1.0.js" />
+    <Content Include="static\Scripts\knockout.validation.js" />
+    <Content Include="static\Scripts\knockout.validation.min.js" />
+    <Content Include="static\Scripts\knockout.validation.min.js.map" />
+    <Content Include="static\Scripts\Login\Index.js" />
+    <Content Include="static\Scripts\ManagersManagement\Index.js" />
+    <Content Include="static\Scripts\modernizr-2.6.2.js" />
+    <Content Include="static\Scripts\Register\Index.js" />
+    <Content Include="static\Scripts\respond.js" />
+    <Content Include="static\Scripts\respond.min.js" />
+    <Content Include="static\Scripts\sammy-0.7.5.js" />
+    <Content Include="static\Scripts\sammy-0.7.5.min.js" />
+    <Content Include="static\Scripts\Search\Index.js" />
+    <Content Include="static\Scripts\select2.js" />
+    <Content Include="static\Scripts\select2.min.js" />
+    <Content Include="static\Scripts\Statistic.js" />
+    <Content Include="static\Scripts\Table.js" />
+    <Content Include="static\Scripts\ToursManagement\Index.js" />
+    <None Include="static\Scripts\_references.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env1\">
+      <Id>env1</Id>
+      <Version>3.6</Version>
+      <Description>env1 (Python 3.6 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>

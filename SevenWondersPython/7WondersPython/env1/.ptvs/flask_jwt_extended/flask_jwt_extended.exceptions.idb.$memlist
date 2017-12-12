@@ -1,0 +1,10 @@
+JWTExtendedException
+FreshTokenRequired
+UserLoadError
+JWTDecodeError
+NoAuthorizationError
+UserClaimsVerificationError
+RevokedTokenError
+InvalidHeaderError
+WrongTokenError
+CSRFError

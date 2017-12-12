@@ -1,0 +1,706 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A8100E1F-017B-430B-A1D5-9CF919BFEC19}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SevenWonders.WebAPI</RootNamespace>
+    <AssemblyName>SevenWonders.WebAPI</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Diagnostics.Tracing.EventSource, Version=1.1.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.28\lib\net40\Microsoft.Diagnostics.Tracing.EventSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.4.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.4.4\lib\net45\MongoDB.Bson.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.4.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.4.4\lib\net45\MongoDB.Driver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.4.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.4.4\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RabbitMQ.Client, Version=5.0.0.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
+      <HintPath>..\packages\RabbitMQ.Client.5.0.1\lib\net451\RabbitMQ.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http.Owin, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AirportsController.cs" />
+    <Compile Include="Controllers\CitiesController.cs" />
+    <Compile Include="Controllers\CountriesController.cs" />
+    <Compile Include="Controllers\CustomerCabinetController.cs" />
+    <Compile Include="Controllers\CustomersManagementController.cs" />
+    <Compile Include="Controllers\FlightsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HotelsController.cs" />
+    <Compile Include="Controllers\ManagersManagementController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\ToursManagementController.cs" />
+    <Compile Include="DAL\Countries\CountriesRepository.cs" />
+    <Compile Include="DAL\Countries\ICountriesRepository.cs" />
+    <Compile Include="DTO\Airports\AirportModel.cs" />
+    <Compile Include="DTO\Cities\CityModel.cs" />
+    <Compile Include="DTO\Countries\CountryModel.cs" />
+    <Compile Include="DTO\Shared\DropDownListItem.cs" />
+    <Compile Include="DTO\Flights\EditFlightModel.cs" />
+    <Compile Include="DTO\Flights\FlightModel.cs" />
+    <Compile Include="DTO\Flights\FlightShortInfoModel.cs" />
+    <Compile Include="DTO\Flights\ScheduleItemModel.cs" />
+    <Compile Include="DTO\Hotels\HotelPhotoModel.cs" />
+    <Compile Include="DTO\Hotels\HotelShortInfoModel.cs" />
+    <Compile Include="DTO\ManagersManagement\ManagerEditModel.cs" />
+    <Compile Include="DTO\ManagersManagement\ManagerSerchModel.cs" />
+    <Compile Include="DTO\Hotels\RoomShortInfoModel.cs" />
+    <Compile Include="DTO\Search\TourForBookingModel.cs" />
+    <Compile Include="DTO\Search\TourForSearchModel.cs" />
+    <Compile Include="DTO\Account\Security.cs" />
+    <Compile Include="DTO\ToursManagement\TourModel.cs" />
+    <Compile Include="DTO\Account\Utils.cs" />
+    <Compile Include="DTO\Account\WorkWithAutorizedPerson.cs" />
+    <Compile Include="DTO\Account\WorkWithCustomer.cs" />
+    <Compile Include="DTO\Account\WorkWithManager.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\Account\Interfaces\IAuthorizedPerson.cs" />
+    <Compile Include="DTO\Account\Interfaces\ICustomer.cs" />
+    <Compile Include="DTO\Account\Interfaces\IManager.cs" />
+    <Compile Include="DTO\Account\Interfaces\IPerson.cs" />
+    <Compile Include="Models\Administrator.cs" />
+    <Compile Include="Models\Airplane.cs" />
+    <Compile Include="Models\Airport.cs" />
+    <Compile Include="Models\Answer.cs" />
+    <Compile Include="Models\City.cs" />
+    <Compile Include="Models\Country.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Equipment.cs" />
+    <Compile Include="Models\ExtraPrice.cs" />
+    <Compile Include="Models\Facility.cs" />
+    <Compile Include="Models\Feedback.cs" />
+    <Compile Include="Models\Flight.cs" />
+    <Compile Include="Models\FoodType.cs" />
+    <Compile Include="Models\Hotel.cs" />
+    <Compile Include="Models\HotelsPhoto.cs" />
+    <Compile Include="Models\IdentityExtensions.cs" />
+    <Compile Include="Models\Manager.cs" />
+    <Compile Include="Models\Message.cs" />
+    <Compile Include="Models\Question.cs" />
+    <Compile Include="Models\Rating.cs" />
+    <Compile Include="Models\Reservation.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\Room.cs" />
+    <Compile Include="Models\RoomsPhoto.cs" />
+    <Compile Include="Models\RoomType.cs" />
+    <Compile Include="Models\Schedule.cs" />
+    <Compile Include="Models\SevenWondersContext.cs" />
+    <Compile Include="Models\Tour.cs" />
+    <Compile Include="Models\TourState.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="DTO\Account\FullManagerViewModel.cs" />
+    <Compile Include="DTO\Account\LoginModel.cs" />
+    <Compile Include="DTO\Account\ManagersSearchViewModel.cs" />
+    <Compile Include="DTO\Account\RegisterViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\SevenWondersOld.mdf" />
+    <Content Include="App_Data\SevenWondersOld_log.ldf">
+      <DependentUpon>SevenWondersOld.mdf</DependentUpon>
+    </Content>
+    <Content Include="static\Content\Airports\Index.css" />
+    <Content Include="static\Content\bootstrap-theme.css" />
+    <Content Include="static\Content\bootstrap-theme.min.css" />
+    <Content Include="static\Content\bootstrap.css" />
+    <Content Include="static\Content\bootstrap.min.css" />
+    <Content Include="static\Content\Cities\Index.css" />
+    <Content Include="static\Content\Contact\Index.css" />
+    <Content Include="static\Content\Countries\Index.css" />
+    <Content Include="static\Content\creative.css" />
+    <Content Include="static\Content\creative.min.css" />
+    <Content Include="static\Content\CustomerCabinet\Index.css" />
+    <Content Include="static\Content\CustomersManagement\Index.css" />
+    <Content Include="static\Content\Flights\FlightShortInfo.css" />
+    <Content Include="static\Content\Hotels\HotelShortInfo.css" />
+    <Content Include="static\Content\Hotels\RoomShortInfo.css" />
+    <Content Include="static\Content\Images\loader.gif" />
+    <Content Include="static\Content\img\1.jpg" />
+    <Content Include="static\Content\img\17661561.jpg" />
+    <Content Include="static\Content\img\17742267.jpg" />
+    <Content Include="static\Content\img\17898992.jpg" />
+    <Content Include="static\Content\img\2.jpg" />
+    <Content Include="static\Content\img\22986028.jpg" />
+    <Content Include="static\Content\img\32965782.jpg" />
+    <Content Include="static\Content\img\33331970.jpg" />
+    <Content Include="static\Content\img\33336275.jpg" />
+    <Content Include="static\Content\img\33407453.jpg" />
+    <Content Include="static\Content\img\33473915.jpg" />
+    <Content Include="static\Content\img\33553223.jpg" />
+    <Content Include="static\Content\img\33760867.jpg" />
+    <Content Include="static\Content\img\363834.jpg" />
+    <Content Include="static\Content\img\374010.jpg" />
+    <Content Include="static\Content\img\38529985.jpg" />
+    <Content Include="static\Content\img\39917565.jpg" />
+    <Content Include="static\Content\img\51271742.jpg" />
+    <Content Include="static\Content\img\674925.png" />
+    <Content Include="static\Content\img\Avatar.jpg" />
+    <Content Include="static\Content\img\default.png" />
+    <Content Include="static\Content\img\header.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel10\1.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel10\2.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel10\3.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel10\4.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel10\5.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel10\6.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel10\7.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel11\1.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel11\2.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel11\3.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel11\4.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel11\5.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel11\6.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel11\7.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel11\8.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel11\9.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel13\10.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel13\2.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel13\3.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel13\4.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel13\5.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel13\6.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel13\7.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel13\8.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel13\9.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel15\1.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel15\10.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel15\2.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel15\3.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel15\4.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel15\5.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel15\6.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel15\7.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel15\8.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel15\9.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel2\2.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel2\33043.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel2\33108.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel3\14.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel3\22986028.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel41\11594109_12_y.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel4\14.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel4\hotel3.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel5\11594109_12_y.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel5\14.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel5\hotel3.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel6\hotel1.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel6\hotel2.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel6\hotel3.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel7\hotel1.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel7\hotel2.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel7\hotel3.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel8\hotel1.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel8\hotel2.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel8\hotel3.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel9\hotel1.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel9\hotel2.jpg" />
+    <Content Include="static\Content\img\Hotels\Hotel9\hotel3.jpg" />
+    <Content Include="static\Content\img\palma.png" />
+    <Content Include="static\Content\img\Rooms\Room17\47251022.jpg" />
+    <Content Include="static\Content\img\Rooms\Room18\78679797.jpg" />
+    <Content Include="static\Content\img\Rooms\Room26\46487274.jpg" />
+    <Content Include="static\Content\img\Rooms\Room27\46487277.jpg" />
+    <Content Include="static\Content\img\Rooms\Room28\56068710.jpg" />
+    <Content Include="static\Content\img\Rooms\Room31\1.jpg" />
+    <Content Include="static\Content\img\Rooms\Room31\2.jpg" />
+    <Content Include="static\Content\img\Rooms\Room31\3.jpg" />
+    <Content Include="static\Content\img\Rooms\Room31\4.jpg" />
+    <Content Include="static\Content\img\Rooms\Room32\1.jpg" />
+    <Content Include="static\Content\img\Rooms\Room32\2.jpg" />
+    <Content Include="static\Content\img\Rooms\Room32\3.jpg" />
+    <Content Include="static\Content\img\Rooms\Room32\4.jpg" />
+    <Content Include="static\Content\img\Rooms\Room37\1.jpg" />
+    <Content Include="static\Content\img\Rooms\Room37\2.jpg" />
+    <Content Include="static\Content\img\Rooms\Room37\3.jpg" />
+    <Content Include="static\Content\img\Rooms\Room37\4.jpg" />
+    <Content Include="static\Content\img\Rooms\Room38\1.jpg" />
+    <Content Include="static\Content\img\Rooms\Room38\2.jpg" />
+    <Content Include="static\Content\img\Rooms\Room38\3.jpg" />
+    <Content Include="static\Content\img\Rooms\Room38\4.jpg" />
+    <Content Include="static\Content\img\Rooms\Room39\1.jpg" />
+    <Content Include="static\Content\img\Rooms\Room39\2.jpg" />
+    <Content Include="static\Content\img\Rooms\Room39\3.jpg" />
+    <Content Include="static\Content\img\Rooms\Room39\4.jpg" />
+    <Content Include="static\Content\img\Rooms\Room58\2.jpg" />
+    <Content Include="static\Content\img\Rooms\Room60\46385677.jpg" />
+    <Content Include="static\Content\img\Rooms\Room61\25955758.jpg" />
+    <Content Include="static\Content\img\Rooms\Room62\46385682.jpg" />
+    <Content Include="static\Content\img\Rooms\Room68\46385685.jpg" />
+    <Content Include="static\Content\img\tour1.jpg" />
+    <Content Include="static\Content\img\tour2.jpg" />
+    <Content Include="static\Content\img\tour3.jpg" />
+    <Content Include="static\Content\img\tour4.jpeg" />
+    <Content Include="static\Content\Flights\Index.css" />
+    <Content Include="static\Content\ManagersManagement\Index.css" />
+    <Content Include="static\Content\PagedList.css" />
+    <Content Include="static\Content\Search\Booking.css" />
+    <Content Include="static\Content\Search\Index.css" />
+    <Content Include="static\Content\select2.css" />
+    <Content Include="static\Content\select2.min.css" />
+    <Content Include="static\Content\Site.css" />
+    <Content Include="static\Content\star-off.svg" />
+    <Content Include="static\Content\star-on.svg" />
+    <Content Include="static\Content\stars.css" />
+    <Content Include="static\Content\Table.css" />
+    <Content Include="static\Content\themes\base\accordion.css" />
+    <Content Include="static\Content\themes\base\all.css" />
+    <Content Include="static\Content\themes\base\autocomplete.css" />
+    <Content Include="static\Content\themes\base\base.css" />
+    <Content Include="static\Content\themes\base\button.css" />
+    <Content Include="static\Content\themes\base\core.css" />
+    <Content Include="static\Content\themes\base\datepicker.css" />
+    <Content Include="static\Content\themes\base\dialog.css" />
+    <Content Include="static\Content\themes\base\draggable.css" />
+    <Content Include="static\Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="static\Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="static\Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="static\Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="static\Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="static\Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="static\Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="static\Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="static\Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="static\Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="static\Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="static\Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="static\Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="static\Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="static\Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="static\Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="static\Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="static\Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="static\Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="static\Content\themes\base\jquery-ui.css" />
+    <Content Include="static\Content\themes\base\jquery-ui.min.css" />
+    <Content Include="static\Content\themes\base\menu.css" />
+    <Content Include="static\Content\themes\base\progressbar.css" />
+    <Content Include="static\Content\themes\base\resizable.css" />
+    <Content Include="static\Content\themes\base\selectable.css" />
+    <Content Include="static\Content\themes\base\selectmenu.css" />
+    <Content Include="static\Content\themes\base\slider.css" />
+    <Content Include="static\Content\themes\base\sortable.css" />
+    <Content Include="static\Content\themes\base\spinner.css" />
+    <Content Include="static\Content\themes\base\tabs.css" />
+    <Content Include="static\Content\themes\base\theme.css" />
+    <Content Include="static\Content\themes\base\tooltip.css" />
+    <Content Include="static\Content\ToursManagement\Index.css" />
+    <Content Include="static\Content\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="static\Content\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="static\Content\vendor\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="static\Content\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="static\Content\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="static\Content\vendor\font-awesome\css\font-awesome.css" />
+    <Content Include="static\Content\vendor\font-awesome\css\font-awesome.min.css" />
+    <Content Include="static\Content\vendor\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="static\Content\vendor\jquery\jquery.js" />
+    <Content Include="static\Content\vendor\jquery\jquery.min.js" />
+    <Content Include="static\Content\vendor\magnific-popup\jquery.magnific-popup.js" />
+    <Content Include="static\Content\vendor\magnific-popup\jquery.magnific-popup.min.js" />
+    <Content Include="static\Content\vendor\magnific-popup\magnific-popup.css" />
+    <Content Include="static\Content\vendor\scrollreveal\scrollreveal.js" />
+    <Content Include="static\Content\vendor\scrollreveal\scrollreveal.min.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="static\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="static\Scripts\Airports\Index.js" />
+    <Content Include="static\Scripts\bootstrap.js" />
+    <Content Include="static\Scripts\bootstrap.min.js" />
+    <EmbeddedResource Include="static\Scripts\CustomersManagement\Index.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Content Include="static\Scripts\Cities\Index.js" />
+    <Content Include="static\Scripts\Countries\Index.js" />
+    <Content Include="static\Scripts\CustomerCabinet\Index.js" />
+    <Content Include="static\Scripts\Flights\FlightShortInfo.js" />
+    <Content Include="static\Scripts\Flights\Index.js" />
+    <Content Include="static\Scripts\Home\Index.js" />
+    <Content Include="static\Scripts\Hotels\HotelShortInfo.js" />
+    <Content Include="static\Scripts\Hotels\RoomShortInfo.js" />
+    <Content Include="static\Scripts\jquery-1.10.2.js" />
+    <Content Include="static\Scripts\jquery-1.10.2.min.js" />
+    <Content Include="static\Scripts\jquery-1.10.2.min.map" />
+    <Content Include="static\Content\bootstrap-theme.css.map" />
+    <Content Include="static\Content\bootstrap-theme.min.css.map" />
+    <Content Include="static\Content\bootstrap.css.map" />
+    <Content Include="static\Content\bootstrap.min.css.map" />
+    <Content Include="static\Content\vendor\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="static\Content\vendor\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="static\Content\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="static\Content\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="static\Content\vendor\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="static\Content\vendor\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="static\Content\vendor\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="static\Content\vendor\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="static\Content\vendor\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="static\Content\vendor\font-awesome\less\animated.less" />
+    <Content Include="static\Content\vendor\font-awesome\less\bordered-pulled.less" />
+    <Content Include="static\Content\vendor\font-awesome\less\core.less" />
+    <Content Include="static\Content\vendor\font-awesome\less\fixed-width.less" />
+    <Content Include="static\Content\vendor\font-awesome\less\font-awesome.less" />
+    <Content Include="static\Content\vendor\font-awesome\less\icons.less" />
+    <Content Include="static\Content\vendor\font-awesome\less\larger.less" />
+    <Content Include="static\Content\vendor\font-awesome\less\list.less" />
+    <Content Include="static\Content\vendor\font-awesome\less\mixins.less" />
+    <Content Include="static\Content\vendor\font-awesome\less\path.less" />
+    <Content Include="static\Content\vendor\font-awesome\less\rotated-flipped.less" />
+    <Content Include="static\Content\vendor\font-awesome\less\screen-reader.less" />
+    <Content Include="static\Content\vendor\font-awesome\less\stacked.less" />
+    <Content Include="static\Content\vendor\font-awesome\less\variables.less" />
+    <Content Include="static\Content\vendor\font-awesome\scss\font-awesome.scss" />
+    <Content Include="static\Content\vendor\font-awesome\scss\_animated.scss" />
+    <Content Include="static\Content\vendor\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="static\Content\vendor\font-awesome\scss\_core.scss" />
+    <Content Include="static\Content\vendor\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="static\Content\vendor\font-awesome\scss\_icons.scss" />
+    <Content Include="static\Content\vendor\font-awesome\scss\_larger.scss" />
+    <Content Include="static\Content\vendor\font-awesome\scss\_list.scss" />
+    <Content Include="static\Content\vendor\font-awesome\scss\_mixins.scss" />
+    <Content Include="static\Content\vendor\font-awesome\scss\_path.scss" />
+    <Content Include="static\Content\vendor\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="static\Content\vendor\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="static\Content\vendor\font-awesome\scss\_stacked.scss" />
+    <Content Include="static\Content\vendor\font-awesome\scss\_variables.scss" />
+    <Content Include="static\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="static\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="static\Scripts\jquery-1.12.4.intellisense.js" />
+    <Content Include="static\Scripts\jquery-1.12.4.js" />
+    <Content Include="static\Scripts\jquery-1.12.4.min.js" />
+    <Content Include="static\Scripts\jquery-ui-1.12.0.js" />
+    <Content Include="static\Scripts\jquery-ui-1.12.0.min.js" />
+    <Content Include="static\Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="static\Scripts\jquery.unobtrusive-ajax.min.js" />
+    <None Include="static\Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="static\Scripts\jquery.validate.js" />
+    <Content Include="static\Scripts\jquery.validate.min.js" />
+    <Content Include="static\Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="static\Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="static\Scripts\knockout-3.1.0.debug.js" />
+    <Content Include="static\Scripts\knockout-3.1.0.js" />
+    <Content Include="static\Scripts\knockout.validation.js" />
+    <Content Include="static\Scripts\knockout.validation.min.js" />
+    <Content Include="static\Scripts\Account\Login\Index.js" />
+    <Content Include="static\Scripts\ManagersManagement\Index.js" />
+    <Content Include="static\Scripts\modernizr-2.6.2.js" />
+    <Content Include="static\Scripts\Account\Register\Index.js" />
+    <Content Include="static\Scripts\respond.js" />
+    <Content Include="static\Scripts\respond.min.js" />
+    <Content Include="static\Scripts\sammy-0.7.5.js" />
+    <Content Include="static\Scripts\sammy-0.7.5.min.js" />
+    <Content Include="static\Scripts\Search\Booking.js" />
+    <Content Include="static\Scripts\Search\Index.js" />
+    <Content Include="static\Scripts\select2.js" />
+    <Content Include="static\Scripts\select2.min.js" />
+    <Content Include="static\Scripts\Statistic.js" />
+    <Content Include="static\Scripts\Table.js" />
+    <Content Include="static\Scripts\knockout.validation.min.js.map" />
+    <None Include="static\Scripts\_references.js" />
+    <Content Include="static\Scripts\ToursManagement\Index.js" />
+    <Content Include="Views\Airports\Index.html" />
+    <Content Include="Views\Cities\Index.html" />
+    <Content Include="Views\Countries\Index.html" />
+    <Content Include="Views\CustomerCabinet\Index.html" />
+    <Content Include="Views\Flights\FlightShortInfo.html" />
+    <Content Include="Views\Flights\Index.html" />
+    <Content Include="Views\Hotels\HotelShortInfo.html" />
+    <Content Include="Views\Hotels\RoomShortInfo.html" />
+    <Content Include="Views\Search\Booking.html" />
+    <Content Include="Views\Search\Index.html" />
+    <Content Include="Views\ToursManagement\Index.html" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\CustomersManagement\Index.html" />
+    <Content Include="Views\ManagersManagement\Index.html" />
+    <Content Include="Views\Account\Register.html" />
+    <Content Include="Views\Account\Login.html" />
+    <Content Include="Views\Home\Contact.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="static\Content\img\Hotels\Hotel17\" />
+    <Folder Include="static\Content\img\Hotels\Hotel18\" />
+    <Folder Include="static\Content\img\Hotels\Hotel19\" />
+    <Folder Include="static\Content\img\Hotels\Hotel20\" />
+    <Folder Include="static\Content\img\Hotels\Hotel21\" />
+    <Folder Include="static\Content\img\Hotels\Hotel22\" />
+    <Folder Include="static\Content\img\Hotels\Hotel_10\" />
+    <Folder Include="static\Content\img\Hotels\Hotel_11\" />
+    <Folder Include="static\Content\img\Hotels\Hotel_2\" />
+    <Folder Include="static\Content\img\Hotels\Hotel_3\" />
+    <Folder Include="static\Content\img\Hotels\Hotel_4\" />
+    <Folder Include="static\Content\img\Hotels\Hotel_5\" />
+    <Folder Include="static\Content\img\Hotels\Hotel_6\" />
+    <Folder Include="static\Content\img\Hotels\Hotel_7\" />
+    <Folder Include="static\Content\img\Hotels\Hotel_8\" />
+    <Folder Include="static\Content\img\Hotels\Hotel_9\" />
+    <Folder Include="static\Content\img\Rooms\Room73\" />
+    <Folder Include="static\Content\img\Rooms\Room74\" />
+    <Folder Include="static\Scripts\cldr\" />
+    <Folder Include="static\Scripts\globalize\" />
+    <Folder Include="static\Scripts\KnockoutHelpers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="static\fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="static\fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="static\Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="static\Scripts\jquery-1.12.4.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56479</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:56479/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

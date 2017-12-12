@@ -1,0 +1,10 @@
+C:\4\SevenWondersPython\7WondersDatabase\bin\Debug\7WondersDatabase.dacpac
+C:\4\SevenWondersPython\7WondersDatabase\bin\Debug\_7WondersDatabase.dll
+C:\4\SevenWondersPython\7WondersDatabase\bin\Debug\_7WondersDatabase.pdb
+C:\4\SevenWondersPython\7WondersDatabase\bin\Debug\master.dacpac
+C:\4\SevenWondersPython\7WondersDatabase\obj\Debug\Model.xml
+C:\4\SevenWondersPython\7WondersDatabase\obj\Debug\refactor.xml
+C:\4\SevenWondersPython\7WondersDatabase\obj\Debug\postdeploy.sql
+C:\4\SevenWondersPython\7WondersDatabase\obj\Debug\predeploy.sql
+C:\4\SevenWondersPython\7WondersDatabase\obj\Debug\_7WondersDatabase.dll
+C:\4\SevenWondersPython\7WondersDatabase\obj\Debug\_7WondersDatabase.pdb
